@@ -1,0 +1,550 @@
+:root {
+    --brand: #a52f53;
+    --brand-dark: #711d38;
+    --gold: #c99b45;
+    --bg: #f7f3f0;
+    --white: #fff;
+    --dark: #24191a;
+    --muted: #75696a;
+    --line: #e8ddd8;
+    --danger: #b42318;
+    --shadow: 0 12px 35px rgba(50, 24, 27, .07);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--dark);
+    font-family: "DM Sans", sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* ================= HEADER ================= */
+
+.admin-header {
+    min-height: 75px;
+    padding: 15px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: #fff;
+
+    background:
+        linear-gradient(120deg,
+            #35151f,
+            #a52f53);
+
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.admin-header h1 {
+    font-family: "Playfair Display", serif;
+    margin: 0;
+    font-size: 27px;
+}
+
+.admin-header span {
+    font-size: 11px;
+    color: #e8d9d9;
+}
+
+.website-btn {
+    background: #fff;
+    color: var(--brand);
+    padding: 11px 15px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+
+/* ================= CONTAINER ================= */
+
+.admin-container {
+    width: min(1250px, calc(100% - 36px));
+    margin: auto;
+    padding: 25px 0 60px;
+}
+
+
+/* ================= STATS ================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.stat-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 17px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: var(--shadow);
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    display: grid;
+    place-items: center;
+    background: #f8e9ed;
+    color: var(--brand);
+    font-size: 20px;
+}
+
+.stat-card span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.stat-card strong {
+    display: block;
+    margin-top: 5px;
+    font-size: 28px;
+}
+
+
+/* ================= TABS ================= */
+
+.tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.tab-btn {
+    border: 1px solid var(--line);
+    background: #fff;
+    padding: 11px 17px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.tab-btn.active {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: #fff;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ================= GRID ================= */
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: 370px 1fr;
+    gap: 20px;
+}
+
+.panel {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.panel-heading span {
+    color: var(--brand);
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.panel-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    margin: 5px 0 0;
+}
+
+
+/* ================= FORM ================= */
+
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.toolbar input,
+.toolbar select {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 11px;
+    outline: none;
+    background: #fff;
+}
+
+.form-group textarea {
+    min-height: 85px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus,
+.toolbar input:focus,
+.toolbar select:focus {
+    border-color: var(--brand);
+}
+
+.form-group small {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+
+/* ================= UPLOAD ================= */
+
+.upload-preview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 7px;
+    margin-bottom: 15px;
+}
+
+.upload-preview img {
+    width: 100%;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+}
+
+
+/* ================= BUTTONS ================= */
+
+.form-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.save-btn,
+.clear-btn,
+.edit-btn,
+.delete-btn,
+.contact-btn {
+    border: 0;
+    border-radius: 9px;
+    padding: 10px 13px;
+    font-weight: 700;
+}
+
+.save-btn {
+    background: var(--brand);
+    color: #fff;
+    flex: 1;
+}
+
+.save-btn:hover {
+    background: var(--brand-dark);
+}
+
+.clear-btn {
+    background: #f2e9e5;
+    color: var(--dark);
+}
+
+
+/* ================= TOOLBAR ================= */
+
+.toolbar {
+    display: grid;
+    grid-template-columns: 1fr 190px;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+
+/* ================= SERVICE ITEM ================= */
+
+.admin-service {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    gap: 14px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: center;
+}
+
+.admin-service:last-child {
+    border-bottom: 0;
+}
+
+.admin-thumb {
+    width: 100px;
+    height: 78px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.admin-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.admin-service-info h3 {
+    margin: 0 0 5px;
+    font-family: "Playfair Display", serif;
+    font-size: 19px;
+}
+
+.admin-service-info p {
+    margin: 2px 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.edit-btn {
+    background: #eee8ff;
+    color: #5933a5;
+}
+
+.delete-btn {
+    background: #fee8e8;
+    color: var(--danger);
+}
+
+
+/* ================= BOOKINGS ================= */
+
+.booking-card {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 17px;
+    margin-bottom: 11px;
+}
+
+.booking-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.booking-top h3 {
+    margin: 0;
+    font-size: 17px;
+}
+
+.booking-status {
+    background: #fff0d4;
+    color: #805900;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.booking-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 13px 0;
+}
+
+.booking-info div {
+    background: #faf7f5;
+    border-radius: 8px;
+    padding: 9px;
+    font-size: 12px;
+}
+
+.booking-message {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.contact-btn {
+    background: var(--brand);
+    color: #fff;
+}
+
+.empty-admin {
+    text-align: center;
+    padding: 40px 10px;
+    color: var(--muted);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:1000px) {
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admin-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media(max-width:650px) {
+
+    .admin-header {
+        padding: 15px;
+    }
+
+    .admin-container {
+        width: min(100% - 24px, 1250px);
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-service {
+        grid-template-columns: 75px 1fr;
+    }
+
+    .admin-thumb {
+        width: 75px;
+        height: 65px;
+    }
+
+    .admin-actions {
+        grid-column: 2;
+    }
+
+    .toolbar {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-info {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* ================= ADMIN LOGIN ================= */
+.admin-login-page{
+    min-height:100vh;
+    display:grid;
+    place-items:center;
+    padding:24px;
+    background:radial-gradient(circle at top, #f9e9ee 0, var(--bg) 48%);
+}
+.login-card{
+    width:min(430px,100%);
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:34px;
+    box-shadow:0 24px 70px rgba(50,24,27,.13);
+}
+.login-logo{
+    width:68px;height:68px;border-radius:20px;display:grid;place-items:center;
+    margin:0 auto 12px;color:#fff;font:800 34px "Playfair Display";
+    background:linear-gradient(135deg,var(--brand),var(--gold));
+}
+.login-kicker{display:block;text-align:center;color:var(--gold);font-size:11px;letter-spacing:2px;font-weight:800}
+.login-card h1{text-align:center;margin:5px 0 7px;font:700 30px "Playfair Display"}
+.login-card>p{text-align:center;color:var(--muted);font-size:13px;margin:0 0 24px}
+.login-card label{display:block;font-size:12px;font-weight:700;margin:13px 0 7px}
+.login-input{display:flex;align-items:center;border:1px solid var(--line);border-radius:12px;background:#fff}
+.login-input:focus-within{border-color:var(--brand);box-shadow:0 0 0 3px rgba(165,47,83,.08)}
+.login-input i{width:42px;text-align:center;color:var(--muted)}
+.login-input input{width:100%;border:0;outline:0;padding:13px 13px 13px 0;background:transparent}
+.login-btn{width:100%;border:0;border-radius:12px;padding:13px;margin-top:18px;background:linear-gradient(135deg,var(--brand),var(--brand-dark));color:#fff;font-weight:800}
+.login-error{min-height:20px;text-align:center;color:var(--danger);font-size:12px;margin-top:10px}
+.back-site{display:block;text-align:center;margin-top:18px;color:var(--brand);font-size:13px;font-weight:700}
+.admin-head-actions{display:flex;gap:9px;align-items:center}
+.logout-btn{border:0;background:#fff;color:var(--danger);padding:11px 15px;border-radius:10px;font-weight:800}
+@media(max-width:650px){
+    .admin-head-actions{gap:6px}
+    .website-btn,.logout-btn{padding:9px 10px;font-size:12px}
+}
+
+.admin-review-row{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.admin-review-avatar{width:50px;height:50px;border-radius:50%;overflow:hidden;flex:none;display:grid;place-items:center;background:#f8e9ed;color:var(--brand);font-weight:800}
+.admin-review-avatar img{width:100%;height:100%;object-fit:cover}
+.admin-review-info{flex:1;min-width:0}
+.admin-review-info strong{display:block}
+.admin-review-info small{color:var(--muted);font-size:11px}
+.admin-review-info p{margin:8px 0 0;color:var(--muted);font-size:13px;line-height:1.5}
+.admin-review-stars{color:var(--gold);margin:4px 0}
+.delete-btn{border:0;background:#fff0ef;color:var(--danger);border-radius:9px;padding:9px 11px}
+.empty-state{text-align:center;color:var(--muted);padding:35px}
+
+
+/* =========================================================
+   REVIEW APPROVAL UI
+   ========================================================= */
+.review-pending-badge{display:none;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:#c62828;color:#fff;font-size:11px;line-height:20px;text-align:center;font-weight:800;margin-left:6px}
+.review-pending-badge.show{display:inline-block}
+.tab-btn.has-pending{animation:reviewTabPulse 1.5s ease-in-out infinite}
+@keyframes reviewTabPulse{0%,100%{box-shadow:none}50%{box-shadow:0 0 0 4px rgba(198,40,40,.10)}}
+.review-notification{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;margin:0 0 18px;border:1px solid #f0b5b5;border-radius:14px;background:#fff5f5;color:#7d1f1f}
+.review-notification[hidden]{display:none}
+.review-notification i{font-size:18px;margin-top:2px}
+.review-notification strong{display:block}
+.review-notification p{margin:3px 0 0;font-size:12px;color:#8b5252}
+.admin-review-name-line{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.review-status-pill{display:inline-flex;align-items:center;padding:3px 8px;border-radius:999px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.4px}
+.review-status-pill.pending{background:#fff0d5;color:#9a5b00}
+.review-status-pill.approved{background:#e5f7ec;color:#18743b}
+.review-status-pill.rejected{background:#f6e7e7;color:#a12626}
+.review-approval-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.review-confirm-btn,.review-reject-btn{border:0;border-radius:9px;padding:9px 12px;font-weight:800;cursor:pointer}
+.review-confirm-btn{background:#18864b;color:#fff}
+.review-reject-btn{background:#fce8e8;color:#b32626}
+.review-status-note{margin-top:9px;font-size:11px;font-weight:700;color:var(--muted)}
+.review-status-pending{border-left:3px solid #d98a00;padding-left:13px}
+.review-status-approved{border-left:3px solid #18864b;padding-left:13px}
+.review-status-rejected{border-left:3px solid #b32626;padding-left:13px;opacity:.75}
